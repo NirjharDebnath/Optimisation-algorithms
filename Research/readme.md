@@ -42,8 +42,8 @@ V_i^{(t+1)} = w \cdot V_i^{(t)} + c_1 \cdot r_1 \cdot (P_i^{(t)} \ominus X_i^{(t
 $$
 
 where:
-- $ \V_i^{(t)} $ is the velocity (swap sequence) at iteration `t`.
-- $ \X_i^{(t)} $ is the current tour (permutation) of the particle.
+- $\V_i^{(t)}$ is the velocity (swap sequence) at iteration `t`.
+- $\X_i^{(t)}$ is the current tour (permutation) of the particle.
 - $ \P_i^{(t)} $ is the personal best tour.
 - $ \G^{(t)} $ is the global best tour.
 - $ \ominus $ represents the **difference operator**, which computes a swap sequence to transform one permutation into another.
