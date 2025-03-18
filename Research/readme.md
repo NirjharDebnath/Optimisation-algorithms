@@ -42,21 +42,21 @@ V_i^{(t+1)} = w \cdot V_i^{(t)} + c_1 \cdot r_1 \cdot (P_i^{(t)} \ominus X_i^{(t
 $$
 
 where:
-- $\V_i^{(t)}$ is the velocity (swap sequence) at iteration `t`.
-- $\X_i^{(t)}$ is the current tour (permutation) of the particle.
-- $ \P_i^{(t)} $ is the personal best tour.
-- $ \G^{(t)} $ is the global best tour.
-- $ \ominus $ represents the **difference operator**, which computes a swap sequence to transform one permutation into another.
-- $ w $ is the inertia weight.
-- $ c_1, c_2 $ are acceleration coefficients.
-- $ r_1, r_2 \sim U(0,1) $ are random numbers.
+- $V_i^{(t)}$ is the velocity (swap sequence) at iteration `t`.
+- $X_i^{(t)}$ is the current tour (permutation) of the particle.
+- $P_i^{(t)}$ is the personal best tour.
+- $G^{(t)}$ is the global best tour.
+- $ominus$ represents the **difference operator**, which computes a swap sequence to transform one permutation into another.
+- $w$ is the inertia weight.
+- $c_1, c_2$ are acceleration coefficients.
+- $r_1, r_2 \sim U(0,1)$ are random numbers.
 
 #### **Position Update:**
 The new position (tour) is obtained by applying the swap sequence:
-\[
+$$
 X_i^{(t+1)} = X_i^{(t)} \oplus V_i^{(t+1)}
-\]
-where \( \oplus \) applies the swap sequence to the current permutation.
+$$
+where $\oplus$ applies the swap sequence to the current permutation.
 
 ---
 
