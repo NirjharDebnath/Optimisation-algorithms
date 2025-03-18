@@ -71,6 +71,63 @@ where $\oplus$ applies the swap sequence to the current permutation.
 4. **Track global and personal bests**.
 5. **Repeat for `N` iterations**.
 
+## Reward Calculation and Optimization in PSO
+
+## Overview
+This code snippet defines a reward mechanism for optimizing Particle Swarm Optimization (PSO) parameters using a reinforcement learning approach. The reward is based on the improvement in the global best fitness value, and it is used to update an optimization model.
+
+## Explanation
+- **Reward Calculation:**
+  - The reward is computed as the decrease in the global best distance relative to the previous best fitness value.
+  - A small value (`1e-6`) is added to the denominator to prevent division by zero.
+  
+  ```python
+  reward = (prev_best_fitness - global_best_fitness) / (prev_best_fitness + 1e-6)
+  ```
+  - A positive reward indicates an improvement in the best solution found by the PSO algorithm.
+
+- **Reward Collection:**
+  - The computed reward is stored in `reward_collector` for later analysis or training stability.
+  
+  ```python
+  reward_collector.append(reward)
+  ```
+
+- **Updating Previous Best Fitness:**
+  - The `prev_best_fitness` variable is updated to the new `global_best_fitness` for the next iteration.
+  
+  ```python
+  prev_best_fitness = global_best_fitness
+  ```
+
+- **Loss Calculation:**
+  - The loss function is defined as the negative reward scaled by the mean of `w + c1 + c2` (presumably PSO hyperparameters: inertia weight, cognitive, and social coefficients).
+  - The negative sign ensures that the optimizer increases the reward (improves PSO performance).
+  
+  ```python
+  loss = torch.tensor(-reward * (w + c1 + c2).mean(), requires_grad=True)
+  ```
+
+- **Gradient Descent Optimization:**
+  - The optimizer's gradients are reset (`zero_grad()`).
+  - Backpropagation is performed with `loss.backward()`.
+  - The optimizer updates the model parameters using `optimizer.step()`.
+  
+  ```python
+  optimizer.zero_grad()
+  loss.backward()
+  optimizer.step()
+  ```
+
+## Dependencies
+- PyTorch (for optimization and gradient computation)
+- A PSO algorithm implementation that maintains `global_best_fitness`
+
+## Purpose
+This approach integrates reinforcement learning principles into PSO by adapting hyperparameters dynamically based on performance improvements.
+
+
+
 To train the model, run the following notebook cell:
 ```python
 # Run PSO on a randomly generated TSP instance
