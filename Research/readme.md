@@ -15,10 +15,12 @@ This repository contains an implementation of **Particle Swarm Optimization (PSO
 The **TSP** is an NP-hard combinatorial optimization problem where a salesman must visit `N` cities exactly once and return to the starting city while minimizing the total distance traveled.
 
 Mathematically, given `N` cities and a distance matrix \( D_{ij} \) (distance between city `i` and `j`), we aim to find a permutation \( \pi \) that minimizes:
+
 $$
 F(\pi) = \sum_{i=1}^{N-1} D_{\pi(i), \pi(i+1)} + D_{\pi(N), \pi(1)}
 $$
-where \( \pi(i) \) represents the city at position `i` in the tour.
+
+where $(\pi(i))$ represents the city at position `i` in the tour.
 
 ---
 
