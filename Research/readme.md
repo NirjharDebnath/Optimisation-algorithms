@@ -53,9 +53,11 @@ where:
 
 #### **Position Update:**
 The new position (tour) is obtained by applying the swap sequence:
+
 $$
 X_i^{(t+1)} = X_i^{(t)} \oplus V_i^{(t+1)}
 $$
+
 where $\oplus$ applies the swap sequence to the current permutation.
 
 ---
