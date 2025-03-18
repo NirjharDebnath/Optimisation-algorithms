@@ -144,7 +144,9 @@ Total distance: 375.4
 
 ## **📚 References**
 1️⃣ Kennedy, J., & Eberhart, R. (1995). **Particle swarm optimization**. *Proceedings of ICNN'95 - International Conference on Neural Networks*.
+
 2️⃣ Clerc, M. (2010). **Particle Swarm Optimization**. *Wiley-ISTE*.
+
 3️⃣ Shi, X. H., Liang, Y. C., Lee, H. P., Lu, C., & Wang, Q. X. (2007). **Particle swarm optimization-based algorithms for TSP and generalized TSP**. *Information Processing Letters, 103(5), 169-176*.
 
 ---
